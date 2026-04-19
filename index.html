@@ -1,185 +1,2164 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Vishal Sriram">
+  <meta name="description" content="Vishal Sriram. Staff software engineer at Ramp. Leads integrations.">
+  <title>Vishal Sriram</title>
 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="Vishal Sriram" />
-	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-	<link rel="manifest" href="site.webmanifest">
-	
-	<!-- Stylesheets
-	============================================= -->
-	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
-	<link rel="stylesheet" href="css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-
-	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
 
 
-	<!-- Document Title
-	============================================= -->
-	<title>Vishal Sriram | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..600;1,8..60,300..600&display=swap" rel="stylesheet">
 
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --paper: #FBFAF7;
+      --ink: #1A1A1A;
+      --muted: #6E6A66;
+      --faint: #A09B95;
+      --hair: rgba(26, 26, 26, 0.22);
+      --hair-soft: rgba(26, 26, 26, 0.08);
+      --accent: #8B3A2F;
+      --accent-fk: #2A5F7B;
+      --grid-line: rgba(26, 26, 26, 0.035);
+
+      --schema-bg:  rgba(26, 26, 26, 0.015);
+      --fk-wash:    rgba(42, 95, 123, 0.05);
+      --fk-pop:     rgba(42, 95, 123, 0.09);
+      --fk-focus:   rgba(42, 95, 123, 0.06);
+      --fk-ring:    rgba(42, 95, 123, 0.08);
+      --fk-pulse:   rgba(42, 95, 123, 0.22);
+      --fk-pulse-0: rgba(42, 95, 123, 0);
+
+      --serif: 'Source Serif 4', Charter, Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      background-color: var(--paper);
+      background-image:
+        linear-gradient(to right, var(--grid-line) 0.5px, transparent 0.5px),
+        linear-gradient(to bottom, var(--grid-line) 0.5px, transparent 0.5px);
+      background-size: 24px 24px;
+      background-position: 0 0;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--paper);
+    }
+
+    .canvas {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 40px 40px 56px;
+    }
+
+    /* --- Registration marks (drafting-table corners) --- */
+    .reg-mark {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      pointer-events: none;
+    }
+    .reg-mark::before,
+    .reg-mark::after {
+      content: '';
+      position: absolute;
+      background: var(--hair);
+    }
+    .reg-mark--tl { top: 16px; left: 16px; }
+    .reg-mark--tl::before { top: 0; left: 0; width: 12px; height: 0.5px; }
+    .reg-mark--tl::after  { top: 0; left: 0; width: 0.5px; height: 12px; }
+    .reg-mark--tr { top: 16px; right: 16px; }
+    .reg-mark--tr::before { top: 0; right: 0; width: 12px; height: 0.5px; }
+    .reg-mark--tr::after  { top: 0; right: 0; width: 0.5px; height: 12px; }
+    .reg-mark--bl { bottom: 16px; left: 16px; }
+    .reg-mark--bl::before { bottom: 0; left: 0; width: 12px; height: 0.5px; }
+    .reg-mark--bl::after  { bottom: 0; left: 0; width: 0.5px; height: 12px; }
+    .reg-mark--br { bottom: 16px; right: 16px; }
+    .reg-mark--br::before { bottom: 0; right: 0; width: 12px; height: 0.5px; }
+    .reg-mark--br::after  { bottom: 0; right: 0; width: 0.5px; height: 12px; }
+
+    /* --- Drafting chrome: rulers + crosshair (blueprint mode only) --- */
+    .ruler-top, .ruler-left, .crosshair { display: none; }
+
+    body.dark .ruler-top,
+    body.dark .ruler-left,
+    body.dark .crosshair { display: block; }
+
+    .ruler-top, .ruler-left {
+      position: fixed;
+      pointer-events: none;
+      z-index: 3;
+      background: var(--schema-bg);
+    }
+    .ruler-top  { top: 0; left: 0; right: 0;  height: 16px; border-bottom: 0.5px solid var(--hair-soft); }
+    .ruler-left { top: 0; left: 0; bottom: 0; width: 16px;  border-right:  0.5px solid var(--hair-soft); }
+
+    .ruler-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+    .ruler-tick { stroke: var(--hair-soft); stroke-width: 0.5; }
+    .ruler-tick--major { stroke: var(--hair); }
+    .ruler-cursor {
+      stroke: var(--accent-fk);
+      stroke-width: 1;
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+    .ruler-cursor.active { opacity: 1; }
+
+    .crosshair {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .crosshair-v, .crosshair-h {
+      position: absolute;
+      background: var(--accent-fk);
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+    .crosshair.active .crosshair-v,
+    .crosshair.active .crosshair-h { opacity: 0.28; }
+
+    .crosshair-v { top: 0; bottom: 0; width: 0.5px; left: var(--mx, -10px); }
+    .crosshair-h { left: 0; right: 0; height: 0.5px; top: var(--my, -10px); }
+
+    .crosshair-label {
+      position: absolute;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.04em;
+      color: var(--accent-fk);
+      background: var(--paper);
+      border: 0.5px solid var(--hair-soft);
+      padding: 2px 6px;
+      white-space: nowrap;
+      left: var(--mx, -10px);
+      top: var(--my, -10px);
+      transform: translate(12px, 12px);
+      opacity: 0;
+      transition: opacity 0.15s ease;
+    }
+    .crosshair.active .crosshair-label { opacity: 1; }
+
+    @media (hover: none), (max-width: 640px) {
+      .ruler-top, .ruler-left, .crosshair { display: none !important; }
+    }
+
+    /* --- Title bar (architectural drawing convention) --- */
+    .titlebar {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-bottom: 14px;
+      margin-bottom: 40px;
+      border-bottom: 0.5px solid var(--hair);
+      font-family: var(--mono);
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .titlebar .tb-left { display: flex; gap: 18px; }
+    .titlebar .tb-dim { color: var(--faint); }
+
+    /* --- Diagram layout --- */
+    .diagram {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      grid-template-rows: auto auto 1fr;
+      column-gap: 88px;
+      row-gap: 28px;
+      align-items: start;
+    }
+
+    .edges {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .entity--primary { grid-column: 1; grid-row: 1 / span 3; }
+    .entity--job     { grid-column: 2; grid-row: 1; }
+    .entity--school  { grid-column: 2; grid-row: 2; }
+    .entity--link    { grid-column: 2; grid-row: 3; }
+
+    /* --- Entity box --- */
+    .entity {
+      background: var(--paper);
+      border: 0.5px solid var(--hair);
+      position: relative;
+      z-index: 1;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.4s ease;
+    }
+
+    .entity:hover {
+      border-color: var(--ink);
+    }
+
+    .entity-head {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      padding: 10px 14px;
+      border-bottom: 0.5px solid var(--hair);
+    }
+
+    .entity-kind {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    .entity-name {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+    }
+
+    .entity-flag {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-left: auto;
+    }
+
+    /* --- Fields (key-type-value rows) --- */
+    .fields {
+      list-style: none;
+    }
+
+    .field {
+      display: grid;
+      grid-template-columns: 92px 68px minmax(0, 1fr);
+      column-gap: 14px;
+      padding: 9px 14px;
+      border-bottom: 0.5px solid var(--hair-soft);
+      align-items: baseline;
+    }
+
+    .field:last-child { border-bottom: none; }
+
+    .field-name {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      color: var(--ink);
+    }
+
+    .field-type {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--faint);
+      white-space: nowrap;
+    }
+
+    .field-value {
+      font-family: var(--sans);
+      font-size: 13.5px;
+      color: var(--ink);
+      line-height: 1.4;
+      min-width: 0;
+    }
+
+    /* --- Prose field (the notes column expands) --- */
+    .field--prose {
+      grid-template-columns: 92px 68px minmax(0, 1fr);
+      align-items: start;
+    }
+
+    .field--prose .field-value {
+      font-family: var(--serif);
+      font-size: 16.5px;
+      line-height: 1.6;
+      color: var(--ink);
+      font-weight: 400;
+      transition: opacity 0.3s ease;
+    }
+
+    .field--prose p {
+      margin-bottom: 0.9em;
+    }
+
+    .field--prose p:last-child { margin-bottom: 0; }
+
+    .field--prose strong { font-weight: 600; }
+    .field--prose em { font-style: italic; }
+
+    /* --- Record rows (for 'job' entity) --- */
+    .records {
+      list-style: none;
+    }
+
+    .record {
+      display: grid;
+      grid-template-columns: 152px minmax(0, 1fr) auto;
+      column-gap: 14px;
+      padding: 9px 14px;
+      border-bottom: 0.5px solid var(--hair-soft);
+      align-items: baseline;
+    }
+
+    .record:last-child { border-bottom: none; }
+
+    .record-key {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      color: var(--ink);
+    }
+
+    .record-detail {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .record-date {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--faint);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .record--intern .record-key { color: var(--muted); }
+    .record--intern .record-detail { color: var(--faint); }
+
+    /* --- Schema header row (column signature for the job table) --- */
+    .record--schema {
+      padding: 7px 14px 8px;
+      border-bottom: 0.5px solid var(--hair);
+      background: var(--schema-bg);
+    }
+
+    .record--schema .rs-name {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .record--schema .rs-type {
+      font-family: var(--mono);
+      font-size: 9.5px;
+      letter-spacing: 0.06em;
+      color: var(--faint);
+      margin-left: 6px;
+    }
+
+    /* --- Links (only inside link entity should be hover-styled) --- */
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-color: var(--hair);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      transition: color 0.18s ease, text-decoration-color 0.18s ease;
+    }
+
+    a:hover {
+      color: var(--accent);
+      text-decoration-color: var(--accent);
+    }
+
+    a:focus-visible {
+      outline: 1.5px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* --- SVG edge styles --- */
+    .edges .edge-line {
+      fill: none;
+      stroke: var(--hair);
+      stroke-width: 0.5;
+      transition: stroke 0.2s;
+    }
+
+    .edges .edge-foot {
+      fill: none;
+      stroke: var(--hair);
+      stroke-width: 0.5;
+    }
+
+    .edges .edge-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      fill: var(--faint);
+      letter-spacing: 0.04em;
+    }
+
+    /* --- Colophon --- */
+    .colophon {
+      margin-top: 64px;
+      padding-top: 18px;
+      border-top: 0.5px solid var(--hair-soft);
+      font-family: var(--mono);
+      font-size: 9.5px;
+      color: var(--faint);
+      letter-spacing: 0.06em;
+      text-transform: lowercase;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* --- Query bar --- */
+    .querybar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: -28px;
+      margin-bottom: 10px;
+      padding: 9px 12px;
+      border: 0.5px solid var(--hair-soft);
+      background: var(--paper);
+      font-family: var(--mono);
+      font-size: 12px;
+      transition: border-color 0.2s ease;
+    }
+
+    .querybar:focus-within {
+      border-color: var(--accent-fk);
+    }
+
+    .query-prompt {
+      color: var(--accent-fk);
+      font-weight: 500;
+      user-select: none;
+    }
+
+    .query-input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink);
+      padding: 0;
+      min-width: 0;
+    }
+
+    .query-input::placeholder { color: var(--faint); }
+    .query-input::selection { background: var(--accent-fk); color: var(--paper); }
+
+    .query-hint {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--faint);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .query-hint kbd {
+      display: inline-block;
+      padding: 1px 5px;
+      border: 0.5px solid var(--hair);
+      border-radius: 2px;
+      font-family: var(--mono);
+      font-size: 10px;
+      background: var(--paper);
+    }
+
+    .query-response {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+      min-height: 16px;
+      margin-bottom: 22px;
+      padding: 0 12px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .query-response.visible { opacity: 1; }
+    .query-response .ok { color: var(--accent-fk); }
+    .query-response .err { color: var(--accent); }
+    .query-response .dim { color: var(--faint); }
+
+    .query-response pre {
+      font: inherit;
+      color: inherit;
+      margin: 0;
+      line-height: 1.4;
+      white-space: pre;
+      overflow-x: auto;
+    }
+    .query-response pre .title { color: var(--faint); }
+    .query-response pre .head  { color: var(--muted); }
+    .query-response pre .rule  { color: var(--faint); }
+
+    /* --- Filter / focus / shake / flash states --- */
+    .record.filtered-out {
+      opacity: 0.22;
+      transition: opacity 0.25s ease;
+    }
+
+    .entity::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--paper);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, background-color 0.4s ease;
+      z-index: 2;
+    }
+
+    .entity.filtered-out::after {
+      opacity: 0.7;
+    }
+
+    .record.focused {
+      background: var(--fk-focus);
+    }
+
+    .entity.focused {
+      border-color: var(--accent-fk);
+      box-shadow: 0 0 0 2px var(--fk-ring);
+    }
+
+    @keyframes schema-shake {
+      0%, 100% { transform: translateX(0); }
+      15% { transform: translateX(-4px); }
+      30% { transform: translateX(4px); }
+      45% { transform: translateX(-3px); }
+      60% { transform: translateX(3px); }
+      75% { transform: translateX(-2px); }
+      90% { transform: translateX(2px); }
+    }
+
+    .entity.shake {
+      animation: schema-shake 0.45s ease;
+    }
+
+    @keyframes schema-flash {
+      0%, 100% { box-shadow: 0 0 0 0 var(--fk-pulse-0); }
+      25%      { box-shadow: 0 0 0 5px var(--fk-pulse); }
+    }
+
+    .entity.flash {
+      animation: schema-flash 0.7s ease;
+    }
+
+    /* --- FK hover interaction --- */
+    [data-fk] {
+      cursor: help;
+    }
+
+    [data-fk]:hover {
+      background: var(--fk-wash);
+    }
+
+    [data-fk]:hover .field-type,
+    [data-fk]:hover .field-value {
+      color: var(--accent-fk);
+    }
+
+    .record.fk-matched {
+      background: var(--fk-pop);
+    }
+
+    .record.fk-matched .record-key {
+      color: var(--accent-fk);
+    }
+
+    .entity.fk-target {
+      border-color: var(--accent-fk);
+    }
+
+    /* --- Edge highlight state --- */
+    .edges .edge-line.highlighted,
+    .edges .edge-foot.highlighted {
+      stroke: var(--accent-fk);
+      stroke-width: 1;
+    }
+
+    .edges .edge-label.highlighted {
+      fill: var(--accent-fk);
+    }
+
+    /* --- Flow dots --- */
+    .edges .flow-dot {
+      fill: var(--accent-fk);
+      opacity: 0;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 820px) {
+      .canvas {
+        padding: 32px 22px 48px;
+      }
+
+      .query-hint { display: none; }
+
+      .querybar {
+        margin-top: -20px;
+        margin-bottom: 8px;
+      }
+
+      .query-response {
+        margin-bottom: 18px;
+      }
+
+      .diagram {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+      }
+
+      .entity--primary { grid-column: 1; grid-row: auto; }
+      .entity--job     { grid-column: 1; grid-row: auto; }
+      .entity--school  { grid-column: 1; grid-row: auto; }
+      .entity--link    { grid-column: 1; grid-row: auto; }
+
+      .edges { display: none; }
+
+      .field {
+        grid-template-columns: 80px 62px minmax(0, 1fr);
+        column-gap: 10px;
+      }
+
+      .field--prose {
+        grid-template-columns: 1fr;
+      }
+
+      .field--prose .field-name {
+        margin-bottom: 10px;
+      }
+
+      .field--prose .field-type { display: none; }
+
+      .record {
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto;
+        row-gap: 2px;
+      }
+
+      .record-detail {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+      }
+
+      .record-date {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .colophon { flex-direction: column; gap: 4px; }
+    }
+
+    /* --- [FEATURE: easter eggs + dark mode + hidden field] --- */
+
+    /* Cyanotype blueprint — the "dark" mode reads as an architect's blueprint, not a terminal. */
+    .cyanotype, body.dark {
+      --paper:      #121A26;
+      --ink:        #F2EDE3;
+      --muted:      #A8B0BC;
+      --faint:      #6F7F93;
+      --hair:       rgba(242, 237, 227, 0.28);
+      --hair-soft:  rgba(242, 237, 227, 0.10);
+      --accent:     #E8A06B;
+      --accent-fk:  #A8D0E8;
+      --grid-line:  rgba(242, 237, 227, 0.08);
+
+      --schema-bg:  rgba(242, 237, 227, 0.04);
+      --fk-wash:    rgba(168, 208, 232, 0.10);
+      --fk-pop:     rgba(168, 208, 232, 0.18);
+      --fk-focus:   rgba(168, 208, 232, 0.12);
+      --fk-ring:    rgba(168, 208, 232, 0.18);
+      --fk-pulse:   rgba(168, 208, 232, 0.36);
+      --fk-pulse-0: rgba(168, 208, 232, 0);
+    }
+
+    /* Konami / admin mode — phosphor terminal palette. Declared after cyanotype so source
+       order wins if both classes are present. */
+    body.konami {
+      --paper:      #07090A;
+      --ink:        #7FE29F;
+      --muted:      #4FAE73;
+      --faint:      #2F7A4D;
+      --hair:       rgba(127, 226, 159, 0.28);
+      --hair-soft:  rgba(127, 226, 159, 0.10);
+      --accent:     #FFB86C;
+      --accent-fk:  #A8FFCB;
+      --grid-line:  rgba(127, 226, 159, 0.05);
+
+      --schema-bg:  rgba(127, 226, 159, 0.04);
+      --fk-wash:    rgba(168, 255, 203, 0.06);
+      --fk-pop:     rgba(168, 255, 203, 0.12);
+      --fk-focus:   rgba(168, 255, 203, 0.08);
+      --fk-ring:    rgba(168, 255, 203, 0.16);
+      --fk-pulse:   rgba(168, 255, 203, 0.32);
+      --fk-pulse-0: rgba(168, 255, 203, 0);
+    }
+
+    .field--hidden { display: none; }
+    body.konami .field--hidden { display: grid; }
+
+    body.konami .query-prompt {
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+
+    .canvas.shake {
+      animation: schema-shake 0.55s ease;
+    }
+
+    /* --- Log tail (admin mode backdrop) — reads as `tail -f /var/log/vishal.log`. --- */
+    .logtail {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+
+      padding: 20px 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      font-family: var(--mono);
+      font-size: 11px;
+      line-height: 1.55;
+      white-space: pre;
+      color: rgba(130, 200, 150, 0.38);
+    }
+
+    .logtail > div {
+      overflow: hidden;
+      text-overflow: clip;
+    }
+
+    .logtail .ts  { color: rgba(130, 200, 150, 0.22); }
+    .logtail .src { color: rgba(210, 170, 120, 0.55); }
+    .logtail .lv-warn { color: rgba(220, 180, 90, 0.65); }
+    .logtail .lv-err  { color: rgba(220, 110, 100, 0.65); }
+
+    body.konami .logtail { opacity: 1; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .logtail { display: none; }
+    }
+
+    /* --- Print view: treat the page as an architectural drawing on white paper --- */
+    @media print {
+      @page { size: letter; margin: 0.5in; }
+
+      /* Force paper palette regardless of dark/konami state. */
+      body, body.dark, body.konami {
+        --paper:      #FFFFFF;
+        --ink:        #000000;
+        --muted:      #000000;
+        --faint:      #444444;
+        --hair:       #000000;
+        --hair-soft:  #000000;
+        --accent:     #000000;
+        --accent-fk:  #000000;
+        --grid-line:  transparent;
+        --schema-bg:  transparent;
+        --fk-wash:    transparent;
+        --fk-pop:     transparent;
+        --fk-focus:   transparent;
+        --fk-ring:    transparent;
+        --fk-pulse:   transparent;
+        --fk-pulse-0: transparent;
+      }
+
+      html, body {
+        background: #FFFFFF !important;
+        background-image: none !important;
+        color: #000000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* Hide interactive / on-screen-only chrome + decorations that can't be
+         repositioned to page corners in print (reg-marks anchor to .canvas,
+         which spans multiple pages) and the colophon (titlebar already carries
+         the version + date). */
+      .logtail,
+      .querybar,
+      .query-response,
+      .query-hint,
+      .reg-mark,
+      .ruler-top,
+      .ruler-left,
+      .crosshair,
+      .colophon,
+      .field--hidden { display: none !important; }
+
+      .canvas {
+        max-width: none;
+        padding: 0;
+      }
+
+      /* Flatten boxes to 0.25pt hairlines, no shadows, no fills. */
+      .entity,
+      .record,
+      .record--schema {
+        border-color: #000000 !important;
+        border-width: 0.25pt !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+
+      .entity { break-inside: avoid; page-break-inside: avoid; }
+
+      /* Never dim or highlight in print — filter/focus states shouldn't leak in. */
+      .filtered-out, .focused, .flash, .fk-matched, .fk-target, .shake {
+        opacity: 1 !important;
+        background: transparent !important;
+        animation: none !important;
+        transform: none !important;
+        box-shadow: none !important;
+      }
+      .entity::after { display: none !important; }
+
+      /* Edges flatten to the same 0.25pt hairline. */
+      .edges .edge-line,
+      .edges .edge-foot {
+        stroke: #000000 !important;
+        stroke-width: 0.25 !important;
+      }
+      .edges .edge-label { fill: #000000 !important; }
+      .edges .flow-dot { display: none !important; }
+
+      /* Links: print-friendly — black text, no underline clutter. */
+      a, a:hover {
+        color: #000000 !important;
+        text-decoration-color: #000000 !important;
+      }
+
+      .colophon { border-top-color: #000000 !important; }
+    }
+  </style>
 </head>
+<body>
+  <div class="ruler-top" aria-hidden="true"><svg class="ruler-svg" preserveAspectRatio="none"></svg></div>
+  <div class="ruler-left" aria-hidden="true"><svg class="ruler-svg" preserveAspectRatio="none"></svg></div>
+  <div class="crosshair" aria-hidden="true">
+    <div class="crosshair-v"></div>
+    <div class="crosshair-h"></div>
+    <div class="crosshair-label">0, 0</div>
+  </div>
+  <div class="logtail" aria-hidden="true"></div>
+  <main class="canvas">
+    <span class="reg-mark reg-mark--tl" aria-hidden="true"></span>
+    <span class="reg-mark reg-mark--tr" aria-hidden="true"></span>
+    <span class="reg-mark reg-mark--bl" aria-hidden="true"></span>
+    <span class="reg-mark reg-mark--br" aria-hidden="true"></span>
 
-<body class="stretched">
+    <div class="titlebar">
+      <div class="tb-left">
+        <span>vishal.schema</span>
+        <span class="tb-dim">v5</span>
+      </div>
+      <div class="tb-right">
+        <span class="tb-dim">last touched apr 2026</span>
+      </div>
+    </div>
 
-	<!-- Document Wrapper
-	============================================= -->
-	<div id="wrapper" class="clearfix">
+    <div class="querybar">
+      <span class="query-prompt">&gt;</span>
+      <input class="query-input" type="text" placeholder="SELECT * FROM job WHERE year_end &gt; 2022" spellcheck="false" autocomplete="off" aria-label="query">
+      <span class="query-hint">try <kbd>SET theme = dark</kbd>  &middot;  <kbd>/</kbd> to focus</span>
+    </div>
+    <div class="query-response" aria-live="polite"></div>
 
-		<!-- Header
-		============================================= -->
-		<header id="header" class="transparent-header dark full-header no-sticky">
+    <div class="diagram">
+      <svg class="edges" aria-hidden="true"></svg>
 
-			<div id="header-wrap">
+      <!-- vishal entity (primary) -->
+      <section class="entity entity--primary entity--vishal">
+        <header class="entity-head">
+          <span class="entity-kind">entity</span>
+          <h1 class="entity-name">vishal</h1>
+          <span class="entity-flag">primary</span>
+        </header>
+        <div class="fields">
+          <div class="field">
+            <span class="field-name">name</span>
+            <span class="field-type">text</span>
+            <span class="field-value">Vishal Sriram</span>
+          </div>
+          <div class="field">
+            <span class="field-name">title</span>
+            <span class="field-type">text</span>
+            <span class="field-value">staff software engineer</span>
+          </div>
+          <div class="field" data-fk="job" data-fk-match="Ramp">
+            <span class="field-name">current_job</span>
+            <span class="field-type">fk → job</span>
+            <span class="field-value">Ramp</span>
+          </div>
+          <div class="field" data-fk="school">
+            <span class="field-name">school</span>
+            <span class="field-type">fk → edu</span>
+            <span class="field-value">UIUC</span>
+          </div>
+          <div class="field">
+            <span class="field-name">location</span>
+            <span class="field-type">text</span>
+            <span class="field-value">New York City, NY</span>
+          </div>
+          <div class="field field--hidden">
+            <span class="field-name">theme</span>
+            <span class="field-type">enum</span>
+            <span class="field-value">dark</span>
+          </div>
+          <div class="field field--hidden">
+            <span class="field-name">employee_id</span>
+            <span class="field-type">int</span>
+            <span class="field-value">#01498</span>
+          </div>
+          <div class="field">
+            <span class="field-name">patents</span>
+            <span class="field-type">uspto</span>
+            <span class="field-value"><a href="https://patents.google.com/patent/US20210065132A1" rel="noopener">US20210065132A1</a></span>
+          </div>
+          <div class="field field--prose">
+            <span class="field-name">notes</span>
+            <span class="field-type">prose</span>
+            <div class="field-value">
+              <p>I lead procurement integrations at Ramp. We connect to Jira, Vanta, Docusign, Ironclad, and the long tail of P2P tools businesses actually run on. I turn that messy contract, vendor, and spend data inside these systems into something the rest of Ramp and its agents & workflows can reason about.</p>
+              <p>The interesting problem isn&rsquo;t writing one integration. It&rsquo;s in making each integration easier to write: shared schema inference, auth flows, drift detection, syncs, and error handling. With a good harness on an agent and enough programmatic validation, an integration project can become one that writes itself.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-				<div class="container clearfix">
+      <!-- job entity -->
+      <section class="entity entity--job">
+        <header class="entity-head">
+          <span class="entity-kind">entity</span>
+          <h2 class="entity-name">job</h2>
+          <span class="entity-flag">history</span>
+        </header>
+        <div class="records">
+          <div class="record record--schema" aria-hidden="true">
+            <span class="record-key"><span class="rs-name">company</span><span class="rs-type">text</span></span>
+            <span class="record-detail"><span class="rs-name">role</span><span class="rs-type">text</span></span>
+            <span class="record-date"><span class="rs-name">dates</span><span class="rs-type">range</span></span>
+          </div>
+          <div class="record" data-record-key="Ramp" data-year-end="current" data-type="fulltime">
+            <span class="record-key" data-admin="Aperture Science">Ramp</span>
+            <span class="record-detail" data-admin="principal engineer · genetic lifeform and disk operating system">staff software engineer</span>
+            <span class="record-date">since 2024</span>
+          </div>
+          <div class="record" data-record-key="Ironclad" data-year-end="2024" data-type="fulltime">
+            <span class="record-key">Ironclad</span>
+            <span class="record-detail">senior software engineer</span>
+            <span class="record-date">2022&ndash;2024</span>
+          </div>
+          <div class="record record--intern" data-record-key="Loop Commerce" data-year-end="2021" data-type="intern">
+            <span class="record-key">Loop Commerce</span>
+            <span class="record-detail">intern &middot; synchrony subsidiary</span>
+            <span class="record-date">aug&ndash;dec 2021</span>
+          </div>
+          <div class="record record--intern" data-record-key="AWS" data-year-end="2021" data-type="intern">
+            <span class="record-key">AWS</span>
+            <span class="record-detail">intern</span>
+            <span class="record-date">2021</span>
+          </div>
+          <div class="record" data-record-key="Shepherd Telematics" data-year-end="2021" data-type="founder">
+            <span class="record-key">Shepherd Telematics</span>
+            <span class="record-detail">co-founder &middot; iVenture & hack 4 defense</span>
+            <span class="record-date">jan&ndash;aug 2021</span>
+          </div>
+          <div class="record record--intern" data-record-key="Synchrony" data-year-end="2021" data-type="intern">
+            <span class="record-key">Synchrony</span>
+            <span class="record-detail">intern</span>
+            <span class="record-date">jan 2020 &ndash; may 2021</span>
+          </div>
+          <div class="record record--intern" data-record-key="RTES Lab" data-year-end="2020" data-type="intern">
+            <span class="record-key" data-admin="Black Mesa Research Facility">Real-Time Embedded Systems Lab @ UIUC</span>
+            <span class="record-detail" data-admin="research assistant · anomalous materials">research assistant &middot; uiuc</span>
+            <span class="record-date">feb 2019 &ndash; may 2020</span>
+          </div>
+        </div>
+      </section>
 
-					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+      <!-- school entity -->
+      <section class="entity entity--school">
+        <header class="entity-head">
+          <span class="entity-kind">entity</span>
+          <h2 class="entity-name">school</h2>
+          <span class="entity-flag">edu</span>
+        </header>
+        <div class="fields">
+          <div class="field">
+            <span class="field-name">where</span>
+            <span class="field-type">text</span>
+            <span class="field-value">University of Illinois Urbana&#8209;Champaign</span>
+          </div>
+          <div class="field">
+            <span class="field-name">degrees</span>
+            <span class="field-type">text[]</span>
+            <span class="field-value">bs, mcs computer science</span>
+          </div>
+          <div class="field">
+            <span class="field-name">minor</span>
+            <span class="field-type">text</span>
+            <span class="field-value">statistics</span>
+          </div>
+          <div class="field">
+            <span class="field-name">dates</span>
+            <span class="field-type">range</span>
+            <span class="field-value">2018&ndash;2022</span>
+          </div>
+        </div>
+      </section>
 
-					<!-- Primary Navigation
-					============================================= -->
-					<nav id="primary-menu">
+      <!-- link entity -->
+      <section class="entity entity--link">
+        <header class="entity-head">
+          <span class="entity-kind">entity</span>
+          <h2 class="entity-name">link</h2>
+          <span class="entity-flag">contact</span>
+        </header>
+        <div class="fields">
+          <div class="field">
+            <span class="field-name">email</span>
+            <span class="field-type">mailto</span>
+            <span class="field-value"><a href="mailto:vishl.sriram@gmail.com" data-admin="vishal@aperturescience.com" data-admin-href="mailto:vishal@aperturescience.com">vishl.sriram@gmail.com</a></span>
+          </div>
+          <div class="field">
+            <span class="field-name">r&eacute;sum&eacute;</span>
+            <span class="field-type">pdf</span>
+            <span class="field-value"><a href="Vishal%20Sriram%20Resume.pdf">download</a></span>
+          </div>
+          <div class="field">
+            <span class="field-name">github</span>
+            <span class="field-type">url</span>
+            <span class="field-value"><a href="https://github.com/vitan12" rel="noopener">vitan12</a></span>
+          </div>
+          <div class="field">
+            <span class="field-name">linkedin</span>
+            <span class="field-type">url</span>
+            <span class="field-value"><a href="https://www.linkedin.com/in/vishal-sriram" rel="noopener">vishal-sriram</a></span>
+          </div>
+        </div>
+      </section>
 
-						<ul>
-							<li class="current"><a href="https://www.linkedin.com/in/vishal-sriram"><div>LinkedIn</div></a></li>
-							<li><a href="https://www.github.com/vitan12"><div>Github</div></a></li>
-							<li class="mega-menu"><a href="https://www.facebook.com/vishl.sriram"><div>Facebook</div></a></li>
-							<li class="mega-menu"><a href="Vishal Sriram Resume.pdf"><div>Résumé</div></a></li>
-						</ul>
+    </div>
 
-						<!-- Top Search
-						============================================= -->
-						<div id="top-search">
-							<a href="tel:732-662-8207"><i class="icon-phone3"></i></a>
-						</div><!-- #top-search end -->
-						<div id="top-cart">
-							<a href="mailto: vishl.sriram@gmail.com"><i class="icon-email2"></i></a>
-						</div><!-- #top-search end -->
+    <footer class="colophon">
+      <span>set in source serif 4, inter, and jetbrains mono</span>
+      <span>apr 2026</span>
+    </footer>
 
-					</nav><!-- #primary-menu end -->
+  </main>
 
-				</div>
+  <script>
+    (function () {
+      const SVG_NS = 'http://www.w3.org/2000/svg';
 
-			</div>
+      const edges = {};     // name -> { startX, startY, endX, endY }
+      const flowDots = {};  // name -> SVGCircleElement
 
-		</header><!-- #header end -->
+      function drawEdges() {
+        const svg = document.querySelector('.edges');
+        const diagram = document.querySelector('.diagram');
+        if (!svg || !diagram) return;
 
-		<section id="slider" class="slider-parallax swiper_wrapper full-screen force-full-screen clearfix">
+        const dRect = diagram.getBoundingClientRect();
+        svg.setAttribute('viewBox', '0 0 ' + dRect.width + ' ' + dRect.height);
+        while (svg.firstChild) svg.removeChild(svg.firstChild);
+        Object.keys(edges).forEach(k => delete edges[k]);
+        Object.keys(flowDots).forEach(k => delete flowDots[k]);
 
-			<div class="slider-parallax-inner">
+        const vishal = document.querySelector('.entity--primary');
+        if (!vishal) return;
+        const vRect = vishal.getBoundingClientRect();
 
-				<div class="swiper-container swiper-parent">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide dark" style="background-image: url('image1.JPG'); background-position: center middle;;">
-							<div class="container clearfix">
-								<div class="slider-caption slider-caption-center">
-									<h2 data-animate="fadeInDown">&#128075 I'm Vishal</h2>
-									<p data-animate="fadeInUp" data-delay="400">Welcome! I'm a Senior Software Engineer at Ironclad specializing in scalable systems and unlocking data driven insights.</p>
-									<a data-animate="fadeInUp" data-delay="600" href="mailto: vishl.sriram@gmail.com" class="button button-border button-light button-rounded button-large noleftmargin nobottommargin" style="margin-top: 30px;">Get In Touch!</a>
-									<a data-animate="fadeInUp" data-delay="800" href="Vishal Sriram Resume.pdf" class="button button-3d button-teal button-large nobottommargin" style="margin: 30px 0 0 10px;">My Résumé</a>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide dark" style="background-image: url('ironclad.jpg'); background-position: center top;">
-							<div class="container clearfix">
-								<div class="slider-caption">
-									<h2 data-caption-animate="fadeInUp">What I'm Doing</h2>
-									<p data-caption-animate="fadeInUp" data-caption-delay="200">As a key member of the core data team at Ironclad, a leading legal tech startup in San Francisco, I specialize in crafting and enhancing our data models and pipelines. My focus lies in powering AI-driven insights and enabling the development of scalable, real-time features to enhance our product offerings.</p>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide dark" style="background-image: url('uiuc.png'); background-position: center top;">
-							<div class="container clearfix">
-								<div class="slider-caption slider-caption-center">
-									<h2 data-caption-animate="fadeInUp">What I've Learnt</h2>
-									<p data-caption-animate="fadeInUp" data-caption-delay="200">I am a Master of Computer Science, having completed my Bachelors and Masters at the University of Illinois at Urbana-Champaign, with a minor in Statistics</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
-					<div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
-					<div id="slide-number"><div id="slide-number-current"></div><span>/</span><div id="slide-number-total"></div></div>
-				</div>
+        const childDefs = [
+          { name: 'job',    el: document.querySelector('.entity--job'),    label: '&rarr; job' },
+          { name: 'school', el: document.querySelector('.entity--school'), label: '&rarr; school' },
+          { name: 'link',   el: document.querySelector('.entity--link'),   label: '&rarr; link' }
+        ];
+        const children = childDefs.map(function (c) {
+          if (!c.el) return null;
+          const r = c.el.getBoundingClientRect();
+          return {
+            name: c.name,
+            label: c.label.replace('&rarr;', '\u2192'),
+            leftX: r.left - dRect.left,
+            midY: (r.top + r.height / 2) - dRect.top
+          };
+        }).filter(Boolean);
+        if (!children.length) return;
 
-			</div>
+        const parentX = vRect.right - dRect.left;
+        const parentCenterY = (vRect.top + vRect.height / 2) - dRect.top;
+        const minChildLeftX = Math.min.apply(null, children.map(c => c.leftX));
+        const splitX = parentX + (minChildLeftX - parentX) * 0.32;
 
-		</section>
+        // Pick a trunkY that's offset from every child's Y so every branch has a visible bend.
+        let trunkY = parentCenterY;
+        const MIN_OFFSET = 10;
+        const collides = (y) => children.some(c => Math.abs(c.midY - y) < MIN_OFFSET);
+        if (collides(trunkY)) {
+          const candidates = [parentCenterY - MIN_OFFSET, parentCenterY + MIN_OFFSET,
+                              parentCenterY - MIN_OFFSET * 2, parentCenterY + MIN_OFFSET * 2];
+          for (let i = 0; i < candidates.length; i++) {
+            if (!collides(candidates[i])) { trunkY = candidates[i]; break; }
+          }
+        }
 
-		<!-- Footer
-		============================================= -->
-		<footer id="footer" class="dark">
+        // --- Trunk (parent to split point, horizontal) ---
+        const trunk = document.createElementNS(SVG_NS, 'line');
+        trunk.setAttribute('class', 'edge-line');
+        trunk.setAttribute('data-trunk', '');
+        trunk.setAttribute('x1', parentX);
+        trunk.setAttribute('y1', trunkY);
+        trunk.setAttribute('x2', splitX);
+        trunk.setAttribute('y2', trunkY);
+        svg.appendChild(trunk);
 
-			<!-- Copyrights
-			============================================= -->
-			<div id="copyrights">
+        // --- Single tick on parent side (means "one") ---
+        const tick = document.createElementNS(SVG_NS, 'line');
+        tick.setAttribute('class', 'edge-foot');
+        tick.setAttribute('data-trunk', '');
+        tick.setAttribute('x1', parentX + 6); tick.setAttribute('y1', trunkY - 4);
+        tick.setAttribute('x2', parentX + 6); tick.setAttribute('y2', trunkY + 4);
+        svg.appendChild(tick);
 
-				<div class="container clearfix">
+        // --- For each child: spine segment (if off-axis) + branch + crow's foot + label + flow path ---
+        children.forEach(function (c) {
+          const branchEndX = c.leftX;
+          const branchBodyEndX = branchEndX - 8;
+          const offAxis = Math.abs(c.midY - trunkY) > 0.5;
 
-					<div class="col_half">
-						Made with &#128151 by Vishal Sriram<br>
-						<div class="copyright-links"><a href="https://github.com/vitan12/">Source Code</a></div>
-					</div>
+          // Spine: vertical from (splitX, trunkY) to (splitX, c.midY)
+          if (offAxis) {
+            const spine = document.createElementNS(SVG_NS, 'line');
+            spine.setAttribute('class', 'edge-line');
+            spine.setAttribute('data-edge', c.name);
+            spine.setAttribute('x1', splitX);
+            spine.setAttribute('y1', trunkY);
+            spine.setAttribute('x2', splitX);
+            spine.setAttribute('y2', c.midY);
+            svg.appendChild(spine);
+          }
 
-					<div class="col_half col_last tright">
-						<div class="fright clearfix">
-							<a href="https://www.facebook.com/vishl.sriram" class="social-icon si-small si-borderless si-facebook" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
-								<i class="icon-facebook"></i>
-								<i class="icon-facebook"></i>
-							</a>
+          // Branch: horizontal from splitX to child left
+          const branch = document.createElementNS(SVG_NS, 'line');
+          branch.setAttribute('class', 'edge-line');
+          branch.setAttribute('data-edge', c.name);
+          branch.setAttribute('x1', splitX);
+          branch.setAttribute('y1', c.midY);
+          branch.setAttribute('x2', branchBodyEndX);
+          branch.setAttribute('y2', c.midY);
+          svg.appendChild(branch);
 
-							<a href="httos://www.linkedin.com/in/vishal-sriram" class="social-icon si-small si-borderless si-linkedin" data-toggle="tooltip" data-placement="top" title="" data-original-title="LinkedIn">
-								<i class="icon-linkedin"></i>
-								<i class="icon-linkedin"></i>
-							</a>
+          // Crow's foot at child end (3 prongs)
+          const spread = 5;
+          const back = 8;
+          [[branchEndX - back, c.midY - spread], [branchEndX - back, c.midY], [branchEndX - back, c.midY + spread]].forEach(function (pt) {
+            const f = document.createElementNS(SVG_NS, 'line');
+            f.setAttribute('class', 'edge-foot');
+            f.setAttribute('data-edge', c.name);
+            f.setAttribute('x1', branchEndX); f.setAttribute('y1', c.midY);
+            f.setAttribute('x2', pt[0]); f.setAttribute('y2', pt[1]);
+            svg.appendChild(f);
+          });
 
-							<a href="https://www.github.com/vitan12" class="social-icon si-small si-borderless si-github" data-toggle="tooltip" data-placement="top" title="" data-original-title="Github">
-								<i class="icon-github-circled"></i>
-								<i class="icon-github-circled"></i>
-							</a>
+          // Label on the branch
+          const label = document.createElementNS(SVG_NS, 'text');
+          label.setAttribute('class', 'edge-label');
+          label.setAttribute('data-edge', c.name);
+          label.setAttribute('x', (splitX + branchBodyEndX) / 2);
+          label.setAttribute('y', c.midY - 6);
+          label.setAttribute('text-anchor', 'middle');
+          label.textContent = c.label;
+          svg.appendChild(label);
 
-							<a href="https://stackoverflow.com/" class="social-icon si-small si-borderless si-stackoverflow" data-toggle="tooltip" data-placement="top" title="" data-original-title="Stack Overflow">
-								<i class="icon-stackoverflow"></i>
-								<i class="icon-stackoverflow"></i>
-							</a>
+          // Invisible <path> covering trunk + (spine if any) + branch, for flow-dot animation
+          let d = 'M ' + parentX + ' ' + trunkY + ' L ' + splitX + ' ' + trunkY;
+          if (offAxis) d += ' L ' + splitX + ' ' + c.midY;
+          d += ' L ' + branchBodyEndX + ' ' + c.midY;
+          const path = document.createElementNS(SVG_NS, 'path');
+          path.setAttribute('d', d);
+          path.setAttribute('fill', 'none');
+          path.setAttribute('stroke', 'none');
+          svg.appendChild(path);
 
-						</div>
+          const dot = document.createElementNS(SVG_NS, 'circle');
+          dot.setAttribute('class', 'flow-dot');
+          dot.setAttribute('data-edge', c.name);
+          dot.setAttribute('r', 2.4);
+          dot.setAttribute('cx', parentX);
+          dot.setAttribute('cy', trunkY);
+          svg.appendChild(dot);
 
-						<div class="clear"></div>
+          edges[c.name] = { path: path };
+          flowDots[c.name] = dot;
+        });
+      }
 
-						<i class="icon-envelope2"></i> vishl.sriram@gmail.com <span class="middot">&middot;</span> <i class="icon-phone3"></i> +1 (732) 662-8207 <span class="middot"></span>
-					</div>
+      let raf = null;
+      function scheduleDraw() {
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(drawEdges);
+      }
 
-				</div>
+      window.addEventListener('load', scheduleDraw);
+      window.addEventListener('resize', scheduleDraw);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleDraw);
 
-			</div><!-- #copyrights end -->
+      /* --- Flow dots: a small dot glides from parent to child along each edge
+             on a staggered, randomized cadence so motion feels organic. --- */
+      function startFlow() {
+        const TRAVEL_MS = 1400;
+        const easing = t => t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2, 2)/2;
 
-		</footer><!-- #footer end -->
+        function fire(name) {
+          const edge = edges[name];
+          const dot = flowDots[name];
+          if (!edge || !dot || !edge.path) { scheduleNext(name); return; }
+          const totalLen = edge.path.getTotalLength();
+          const t0 = performance.now();
+          function step(now) {
+            const t = Math.min((now - t0) / TRAVEL_MS, 1);
+            const e = easing(t);
+            const pt = edge.path.getPointAtLength(e * totalLen);
+            dot.setAttribute('cx', pt.x);
+            dot.setAttribute('cy', pt.y);
+            const alpha = t < 0.15 ? (t / 0.15) : t > 0.85 ? ((1 - t) / 0.15) : 1;
+            dot.style.opacity = alpha;
+            if (t < 1) requestAnimationFrame(step);
+            else { dot.style.opacity = 0; scheduleNext(name); }
+          }
+          requestAnimationFrame(step);
+        }
 
-	</div><!-- #wrapper end -->
+        function scheduleNext(name) {
+          const delay = 2200 + Math.random() * 3400;
+          setTimeout(() => fire(name), delay);
+        }
 
-	<!-- Go To Top
-	============================================= -->
-	<div id="gotoTop" class="icon-angle-up"></div>
+        ['job', 'school', 'link'].forEach((name, i) => {
+          setTimeout(() => fire(name), 900 + i * 1100);
+        });
+      }
+      window.addEventListener('load', () => setTimeout(startFlow, 1000));
 
-	<!-- External JavaScripts
-	============================================= -->
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/plugins.js"></script>
+      /* --- FK hover: light the edge + matching record in the target entity --- */
+      function setEdgeHighlight(name, on) {
+        const svg = document.querySelector('.edges');
+        if (!svg) return;
+        const sel = '[data-edge="' + name + '"], [data-trunk]';
+        svg.querySelectorAll(sel).forEach(el => {
+          if (el.classList.contains('flow-dot')) return;
+          el.classList.toggle('highlighted', on);
+        });
+      }
 
-	<!-- Footer Scripts
-	============================================= -->
-	<script type="text/javascript" src="js/functions.js"></script>
+      document.querySelectorAll('[data-fk]').forEach(field => {
+        const target = field.getAttribute('data-fk');
+        const match = field.getAttribute('data-fk-match');
+        const targetEntity = document.querySelector('.entity--' + target);
+        const matchRecord = targetEntity && match
+          ? targetEntity.querySelector('[data-record-key="' + match + '"]')
+          : null;
 
+        field.addEventListener('mouseenter', () => {
+          setEdgeHighlight(target, true);
+          if (targetEntity) targetEntity.classList.add('fk-target');
+          if (matchRecord) matchRecord.classList.add('fk-matched');
+        });
+        field.addEventListener('mouseleave', () => {
+          setEdgeHighlight(target, false);
+          if (targetEntity) targetEntity.classList.remove('fk-target');
+          if (matchRecord) matchRecord.classList.remove('fk-matched');
+        });
+      });
+
+      /* --- Query bar: a tiny SQL-ish parser over the visible schema --- */
+      const input = document.querySelector('.query-input');
+      const response = document.querySelector('.query-response');
+      let responseTimer = null;
+
+      const promptEl = document.querySelector('.query-prompt');
+      let inTransaction = false;
+      let timingOn = false;
+      let queryT0 = null;
+      function updatePrompt() {
+        if (!promptEl) return;
+        const admin = document.body.classList.contains('konami');
+        const prefix = admin ? 'admin' : '';
+        const tail = inTransaction ? '*>' : '>';
+        promptEl.textContent = prefix + tail;
+      }
+
+      function appendTiming() {
+        if (!(timingOn && queryT0 != null)) return;
+        const elapsed = performance.now() - queryT0;
+        response.appendChild(document.createElement('br'));
+        const t = document.createElement('span');
+        t.className = 'dim';
+        t.textContent = 'Time: ' + elapsed.toFixed(3) + ' ms';
+        response.appendChild(t);
+        queryT0 = null;
+      }
+
+      function say(msg, cls) {
+        if (!response) return;
+        response.innerHTML = '';
+        const span = document.createElement('span');
+        if (cls) span.className = cls;
+        span.textContent = msg;
+        response.appendChild(span);
+        appendTiming();
+        response.classList.add('visible');
+        if (responseTimer) clearTimeout(responseTimer);
+        responseTimer = setTimeout(() => response.classList.remove('visible'), 5000);
+      }
+
+      function sayPre(htmlLines, holdMs) {
+        if (!response) return;
+        response.innerHTML = '';
+        const pre = document.createElement('pre');
+        pre.innerHTML = htmlLines;
+        response.appendChild(pre);
+        appendTiming();
+        response.classList.add('visible');
+        if (responseTimer) clearTimeout(responseTimer);
+        responseTimer = setTimeout(() => response.classList.remove('visible'), holdMs || 12000);
+      }
+
+      function escHtml(s) {
+        return String(s).replace(/[&<>]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+      }
+
+      function describeColumns(entity) {
+        const fields = entity.querySelectorAll('.fields > .field:not(.field--hidden)');
+        if (fields.length) {
+          return Array.from(fields).map((f) => {
+            const name = (f.querySelector('.field-name')?.textContent || '').trim();
+            const typeRaw = (f.querySelector('.field-type')?.textContent || '').trim();
+            const fkTarget = f.getAttribute('data-fk') || '';
+            const type = fkTarget ? 'fk' : typeRaw;
+            return { name, type, nullable: 'not null', fk: fkTarget };
+          });
+        }
+        const schemaRow = entity.querySelector('.record--schema');
+        if (schemaRow) {
+          const cells = schemaRow.querySelectorAll('.record-key, .record-detail, .record-date');
+          return Array.from(cells).map((c) => ({
+            name:     (c.querySelector('.rs-name')?.textContent || '').trim(),
+            type:     (c.querySelector('.rs-type')?.textContent || '').trim(),
+            nullable: 'not null',
+            fk: ''
+          }));
+        }
+        return [];
+      }
+
+      function formatDescribe(entityName, cols) {
+        const hasFK = cols.some((c) => c.fk);
+        const headers = hasFK ? ['Column', 'Type', 'Nullable', 'FK']
+                              : ['Column', 'Type', 'Nullable'];
+        const rows = cols.map((c) => hasFK
+          ? [c.name, c.type, c.nullable, c.fk]
+          : [c.name, c.type, c.nullable]);
+
+        const widths = headers.map((h, i) => {
+          let w = h.length;
+          for (const r of rows) w = Math.max(w, r[i].length);
+          return w;
+        });
+
+        const padL = (s, w) => ' ' + s + ' '.repeat(Math.max(0, w - s.length)) + ' ';
+        const padCenter = (s, w) => {
+          const pre = Math.floor((w - s.length) / 2);
+          const post = w - s.length - pre;
+          return ' ' + ' '.repeat(Math.max(0, pre)) + s + ' '.repeat(Math.max(0, post)) + ' ';
+        };
+
+        const headLine = widths.map((w, i) => padCenter(headers[i], w)).join('|');
+        const ruleLine = widths.map((w) => '-'.repeat(w + 2)).join('+');
+        const bodyLines = rows.map((r) => r.map((c, i) => padL(c, widths[i])).join('|'));
+
+        const totalWidth = headLine.length;
+        const title = 'Table "public.' + entityName + '"';
+        const titlePad = Math.max(0, Math.floor((totalWidth - title.length) / 2));
+        const titleLine = ' '.repeat(titlePad) + title;
+
+        const footer = '(' + cols.length + ' column' + (cols.length === 1 ? '' : 's') + ')';
+
+        return [
+          '<span class="title">' + escHtml(titleLine) + '</span>',
+          '<span class="head">'  + escHtml(headLine)  + '</span>',
+          '<span class="rule">'  + escHtml(ruleLine)  + '</span>',
+          bodyLines.map(escHtml).join('\n'),
+          '',
+          '<span class="dim">' + escHtml(footer) + '</span>'
+        ].join('\n');
+      }
+
+      function clearStates() {
+        document.querySelectorAll('.filtered-out, .focused, .flash')
+          .forEach(el => el.classList.remove('filtered-out', 'focused', 'flash'));
+      }
+
+      function allEntities() { return document.querySelectorAll('.entity'); }
+
+      function focusEntity(name) {
+        const el = document.querySelector('.entity--' + name);
+        if (!el) return false;
+        clearStates();
+        allEntities().forEach(e => { if (e !== el) e.classList.add('filtered-out'); });
+        el.classList.add('focused', 'flash');
+        setTimeout(() => el.classList.remove('flash'), 800);
+        return true;
+      }
+
+      function filterJobRecords(predicate) {
+        const jobEntity = document.querySelector('.entity--job');
+        if (!jobEntity) return 0;
+        clearStates();
+        allEntities().forEach(e => { if (e !== jobEntity) e.classList.add('filtered-out'); });
+        jobEntity.classList.add('focused');
+        let kept = 0;
+        jobEntity.querySelectorAll('.record:not(.record--schema)').forEach(r => {
+          if (predicate(r)) {
+            r.classList.remove('filtered-out');
+            r.classList.add('focused');
+            kept++;
+          } else {
+            r.classList.add('filtered-out');
+            r.classList.remove('focused');
+          }
+        });
+        return kept;
+      }
+
+      function parseWhere(entity, where) {
+        if (entity !== 'job') return null;
+        let m = where.match(/^\s*year_end\s*(>=|<=|>|<|=|==|!=)\s*(\d{4}|current)\s*$/i);
+        if (m) {
+          const op = m[1];
+          const rhs = m[2].toLowerCase() === 'current' ? 9999 : parseInt(m[2], 10);
+          return (rec) => {
+            const ye = (rec.getAttribute('data-year-end') || '').toLowerCase();
+            if (!ye) return false;
+            const lhs = ye === 'current' ? 9999 : parseInt(ye, 10);
+            switch (op) {
+              case '>':  return lhs > rhs;
+              case '<':  return lhs < rhs;
+              case '>=': return lhs >= rhs;
+              case '<=': return lhs <= rhs;
+              case '=': case '==': return lhs === rhs;
+              case '!=': return lhs !== rhs;
+            }
+            return false;
+          };
+        }
+        m = where.match(/^\s*type\s*(=|==|!=)\s*['"]?([a-zA-Z]+)['"]?\s*$/i);
+        if (m) {
+          const op = m[1];
+          const val = m[2].toLowerCase();
+          return (rec) => {
+            const t = (rec.getAttribute('data-type') || '').toLowerCase();
+            return op === '!=' ? t !== val : t === val;
+          };
+        }
+        return null;
+      }
+
+      function runQuery(raw) {
+        const q = raw.trim().replace(/;+\s*$/, '');
+        if (!q) return;
+
+        document.dispatchEvent(new CustomEvent('logtail:push', {
+          detail: { src: 'querybar', msg: q }
+        }));
+
+        // \timing toggles the psql-style Time: line under subsequent responses.
+        // The toggle itself shouldn't print a Time: line, so it runs before we
+        // start the clock.
+        if (/^\\timing\s*$/i.test(q)) {
+          timingOn = !timingOn;
+          say('Timing is ' + (timingOn ? 'on' : 'off') + '.', 'ok');
+          return;
+        }
+
+        queryT0 = performance.now();
+
+        if (/^(reset|clear|\\q)$/i.test(q)) {
+          clearStates();
+          say('reset.', 'ok');
+          return;
+        }
+
+        if (/^(help|\\\?|\?)$/i.test(q)) {
+          say('try: SELECT * FROM job WHERE year_end > 2022 · DESCRIBE vishal · SET theme = dark · \\timing · \\l · RESET', 'dim');
+          return;
+        }
+
+        if (/^(\\l|show\s+tables)$/i.test(q)) {
+          say('tables: vishal, job, school, link', 'ok');
+          return;
+        }
+
+        {
+          const tm = q.match(/^set\s+theme\s*=\s*['"]?(\w+)['"]?\s*$/i);
+          if (tm) {
+            const t = tm[1].toLowerCase();
+            if (t === 'dark' || t === 'blueprint' || t === 'cyanotype') {
+              document.body.classList.add('dark');
+              say('theme = blueprint.', 'ok');
+            } else if (t === 'light' || t === 'paper' || t === 'default') {
+              document.body.classList.remove('dark');
+              say('theme = paper.', 'ok');
+            } else {
+              say("invalid theme. try 'dark' or 'light'.", 'err');
+            }
+            return;
+          }
+        }
+
+        if (/^show\s+theme\s*$/i.test(q)) {
+          const cur = document.body.classList.contains('dark') ? 'blueprint' : 'paper';
+          say('theme = ' + cur + '.', 'ok');
+          return;
+        }
+
+        /* --- [FEATURE: easter egg commands] --- */
+        if (/^(\\conninfo|pg_version|select\s+version\s*\(\s*\))\s*$/i.test(q)) {
+          const user = document.body.classList.contains('konami') ? 'admin' : 'visitor';
+          say("connected to database 'vishal' as user '" + user + "' via index.html. v5 (apr 2026).", 'ok');
+          return;
+        }
+
+        if (/^begin\s*$/i.test(q)) {
+          inTransaction = true;
+          updatePrompt();
+          say('BEGIN. transaction open.', 'ok');
+          return;
+        }
+        if (/^commit\s*$/i.test(q)) {
+          if (!inTransaction) { say('WARNING: there is no transaction in progress.', 'err'); return; }
+          inTransaction = false;
+          updatePrompt();
+          say('COMMIT.', 'ok');
+          return;
+        }
+        if (/^rollback\s*$/i.test(q)) {
+          if (!inTransaction) { say('WARNING: there is no transaction in progress.', 'err'); return; }
+          inTransaction = false;
+          updatePrompt();
+          say('ROLLBACK.', 'ok');
+          return;
+        }
+
+        if (/^truncate\s+vishal\s*$/i.test(q)) {
+          const v = document.querySelector('.entity--primary');
+          if (v) { v.classList.add('shake'); setTimeout(() => v.classList.remove('shake'), 500); }
+          say('cannot truncate vishal: foreign key constraints from job, school, link.', 'err');
+          return;
+        }
+
+        if (/^drop\s+database/i.test(q)) {
+          const canvas = document.querySelector('.canvas');
+          if (canvas) { canvas.classList.add('shake'); setTimeout(() => canvas.classList.remove('shake'), 600); }
+          say("permission denied. (and don't even think about it.)", 'err');
+          return;
+        }
+
+        if (/^grant\s+\w+(?:\s+on\s+\w+)?\s+to\s+\S+/i.test(q)) {
+          say('access granted. welcome.', 'ok');
+          return;
+        }
+
+        if (/^sudo\s+/i.test(q)) {
+          say('nice try. this is a read-only replica.', 'err');
+          return;
+        }
+
+        if (/^select\s+love\s+from\s+vishal\s*$/i.test(q)) {
+          say('infinite rows returned.', 'ok');
+          return;
+        }
+
+        /* --- Portal 2 --- */
+        if (/^select\s+\*?\s*from\s+cake\s*$/i.test(q)) {
+          say('0 rows. this was a triumph.', 'ok');
+          return;
+        }
+        if (/^(?:cave[_\s]+johnson|combustible\s+lemons?)\s*$/i.test(q)) {
+          say("when life gives you lemons, don't make lemonade. demand to see life's manager.", 'ok');
+          return;
+        }
+        if (/^(?:\\space|space)\s*$/i.test(q)) {
+          say('space. space. SPAAACE.', 'ok');
+          return;
+        }
+        if (/^select\s+\*?\s*from\s+test_subjects?(?:\s+where\s+alive\s*=\s*true)?\s*$/i.test(q)) {
+          say('1 row. subject #01498 still alive.', 'ok');
+          return;
+        }
+
+        if (/^select\s+now\s*\(\s*\)\s*$/i.test(q)) {
+          const now = new Date();
+          const pad = (n) => String(n).padStart(2, '0');
+          const off = -now.getTimezoneOffset() / 60;
+          const offStr = (off >= 0 ? '+' : '-') + pad(Math.abs(off));
+          const ts = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate()) +
+                     ' ' + pad(now.getHours()) + ':' + pad(now.getMinutes()) + ':' + pad(now.getSeconds()) +
+                     offStr;
+          say(ts, 'ok');
+          return;
+        }
+
+        {
+          const em = q.match(/^explain\s+(?:analyze\s+)?(?:select\s+\*?\s*from\s+)?(\w+)\s*$/i);
+          if (em) {
+            const name = em[1].toLowerCase();
+            if (!document.querySelector('.entity--' + name)) {
+              say('no such table: ' + name, 'err');
+              return;
+            }
+            const recs = document.querySelectorAll('.entity--' + name + ' .record:not(.record--schema)');
+            const fields = document.querySelectorAll('.entity--' + name + ' .field:not(.field--hidden)');
+            const rows = recs.length || fields.length;
+            const cost = '0.00..' + (1 + rows * 0.03).toFixed(2);
+            say('Seq Scan on ' + name + '  (cost=' + cost + '  rows=' + rows + '  width=32)', 'ok');
+            return;
+          }
+        }
+        /* --- [END easter egg commands] --- */
+
+        let m = q.match(/^(describe|desc|\\d)\s+(\w+)$/i);
+        if (m) {
+          const name = m[2].toLowerCase();
+          if (name === 'meaning_of_life' || name === 'life') {
+            say('42.', 'ok');
+            return;
+          }
+          const entity = document.querySelector('.entity--' + name);
+          if (entity) {
+            focusEntity(name);
+            const cols = describeColumns(entity);
+            if (cols.length) {
+              sayPre(formatDescribe(name, cols));
+            } else {
+              say('describe ' + name + '.', 'ok');
+            }
+          } else {
+            say('no such table: ' + name, 'err');
+          }
+          return;
+        }
+
+        m = q.match(/^drop\s+table\s+(\w+)/i);
+        if (m) {
+          const target = document.querySelector('.entity--' + m[1].toLowerCase())
+                       || document.querySelector('.entity--primary');
+          if (target) {
+            target.classList.add('shake');
+            setTimeout(() => target.classList.remove('shake'), 500);
+          }
+          say('permission denied. (nice try.)', 'err');
+          return;
+        }
+
+        m = q.match(/^select\s+\*?\s*from\s+(\w+)(?:\s+where\s+(.+))?$/i);
+        if (m) {
+          const table = m[1].toLowerCase();
+          const where = m[2];
+          if (!document.querySelector('.entity--' + table)) {
+            say('no such table: ' + table, 'err');
+            return;
+          }
+          if (!where) {
+            focusEntity(table);
+            const recs = document.querySelectorAll('.entity--' + table + ' .record:not(.record--schema)');
+            const fields = document.querySelectorAll('.entity--' + table + ' .field');
+            const n = recs.length || fields.length;
+            say(n + ' row' + (n === 1 ? '' : 's') + ' in ' + table + '.', 'ok');
+            return;
+          }
+          const pred = parseWhere(table, where);
+          if (!pred) {
+            say("can't filter on that. try: year_end > 2022 · type = intern", 'err');
+            return;
+          }
+          const kept = filterJobRecords(pred);
+          say(kept + ' row' + (kept === 1 ? '' : 's') + ' match.', 'ok');
+          return;
+        }
+
+        say('syntax error. type HELP.', 'err');
+      }
+
+      if (input) {
+        /* --- History ring (psql-style up/down recall) --- */
+        const HISTORY_MAX = 50;
+        const history = [];
+        let historyIdx = null; // null = editing fresh input; otherwise index into history
+        let draft = '';
+
+        function pushHistory(raw) {
+          const trimmed = raw.trim();
+          if (!trimmed) return;
+          if (history.length && history[history.length - 1] === trimmed) return;
+          history.push(trimmed);
+          if (history.length > HISTORY_MAX) history.shift();
+          historyIdx = null;
+          draft = '';
+        }
+
+        function moveCaretEnd() {
+          const v = input.value;
+          input.setSelectionRange(v.length, v.length);
+        }
+
+        function navHistory(dir) {
+          if (!history.length) return;
+          if (historyIdx === null) {
+            if (dir !== 'up') return;
+            draft = input.value;
+            historyIdx = history.length - 1;
+          } else {
+            const next = historyIdx + (dir === 'up' ? -1 : 1);
+            if (next < 0) return; // clamp at oldest
+            if (next >= history.length) {
+              historyIdx = null;
+              input.value = draft;
+              moveCaretEnd();
+              return;
+            }
+            historyIdx = next;
+          }
+          input.value = history[historyIdx];
+          moveCaretEnd();
+        }
+
+        /* --- Tab-complete table names --- */
+        const TABLES = ['vishal', 'job', 'school', 'link'];
+        function complete() {
+          const val = input.value;
+          const pos = input.selectionStart != null ? input.selectionStart : val.length;
+          const before = val.slice(0, pos);
+          const tok = before.match(/(\w+)$/);
+          if (!tok) return;
+          const typed = tok[1];
+          const prefix = typed.toLowerCase();
+          const matches = TABLES.filter(t => t.startsWith(prefix) && t !== prefix);
+          if (!matches.length) return;
+          matches.sort((a, b) => a.length - b.length);
+          const pick = matches[0];
+          const newBefore = before.slice(0, before.length - typed.length) + pick;
+          input.value = newBefore + val.slice(pos);
+          const newPos = newBefore.length;
+          input.setSelectionRange(newPos, newPos);
+        }
+
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            pushHistory(input.value);
+            runQuery(input.value);
+          } else if (e.key === 'Escape') {
+            input.blur();
+            input.value = '';
+            historyIdx = null;
+            draft = '';
+            clearStates();
+            if (response) response.classList.remove('visible');
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            navHistory('up');
+          } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            navHistory('down');
+          } else if (e.key === 'Tab') {
+            e.preventDefault();
+            complete();
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key !== '/') return;
+          const active = document.activeElement;
+          const tag = (active && active.tagName) || '';
+          if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+          e.preventDefault();
+          input.focus();
+          input.select();
+        });
+      }
+
+      /* --- [FEATURE: konami code -> dark mode + hidden field] --- */
+      const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+      let konProgress = 0;
+      document.addEventListener('keydown', (e) => {
+        const active = document.activeElement;
+        const tag = (active && active.tagName) || '';
+        if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+        const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+        if (key === KONAMI[konProgress]) {
+          konProgress++;
+          if (konProgress === KONAMI.length) {
+            konProgress = 0;
+            document.body.classList.toggle('konami');
+            updatePrompt();
+          }
+        } else {
+          konProgress = (key === KONAMI[0]) ? 1 : 0;
+        }
+      });
+    })();
+
+    /* --- Rulers + crosshair (blueprint mode only) --- */
+    (function() {
+      const rulerTop  = document.querySelector('.ruler-top .ruler-svg');
+      const rulerLeft = document.querySelector('.ruler-left .ruler-svg');
+      const crosshair = document.querySelector('.crosshair');
+      const label     = document.querySelector('.crosshair-label');
+      if (!rulerTop || !rulerLeft || !crosshair || !label) return;
+
+      const SVG_NS = 'http://www.w3.org/2000/svg';
+      const GRID  = 24;
+      const MAJOR = 96;
+      let cursorTickTop = null;
+      let cursorTickLeft = null;
+
+      function line(attrs) {
+        const el = document.createElementNS(SVG_NS, 'line');
+        for (const k in attrs) el.setAttribute(k, attrs[k]);
+        return el;
+      }
+
+      function renderTicks() {
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+
+        rulerTop.innerHTML = '';
+        rulerTop.setAttribute('width', vw);
+        rulerTop.setAttribute('height', 16);
+        rulerTop.setAttribute('viewBox', '0 0 ' + vw + ' 16');
+        for (let x = 0; x <= vw; x += GRID) {
+          const major = x % MAJOR === 0;
+          rulerTop.appendChild(line({
+            x1: x, x2: x,
+            y1: major ? 4 : 10, y2: 16,
+            'class': major ? 'ruler-tick ruler-tick--major' : 'ruler-tick'
+          }));
+        }
+        cursorTickTop = line({ 'class': 'ruler-cursor', y1: 0, y2: 16, x1: -10, x2: -10 });
+        rulerTop.appendChild(cursorTickTop);
+
+        rulerLeft.innerHTML = '';
+        rulerLeft.setAttribute('width', 16);
+        rulerLeft.setAttribute('height', vh);
+        rulerLeft.setAttribute('viewBox', '0 0 16 ' + vh);
+        for (let y = 0; y <= vh; y += GRID) {
+          const major = y % MAJOR === 0;
+          rulerLeft.appendChild(line({
+            y1: y, y2: y,
+            x1: major ? 4 : 10, x2: 16,
+            'class': major ? 'ruler-tick ruler-tick--major' : 'ruler-tick'
+          }));
+        }
+        cursorTickLeft = line({ 'class': 'ruler-cursor', x1: 0, x2: 16, y1: -10, y2: -10 });
+        rulerLeft.appendChild(cursorTickLeft);
+      }
+
+      let mx = -10, my = -10, pending = false;
+
+      function blueprint() {
+        return document.body.classList.contains('dark');
+      }
+
+      function onMove(e) {
+        if (!blueprint()) return;
+        mx = e.clientX;
+        my = e.clientY;
+        if (pending) return;
+        pending = true;
+        requestAnimationFrame(() => {
+          pending = false;
+          crosshair.style.setProperty('--mx', mx + 'px');
+          crosshair.style.setProperty('--my', my + 'px');
+          label.textContent = Math.round(mx) + ', ' + Math.round(my);
+          crosshair.classList.add('active');
+          if (cursorTickTop) {
+            cursorTickTop.setAttribute('x1', mx);
+            cursorTickTop.setAttribute('x2', mx);
+            cursorTickTop.classList.add('active');
+          }
+          if (cursorTickLeft) {
+            cursorTickLeft.setAttribute('y1', my);
+            cursorTickLeft.setAttribute('y2', my);
+            cursorTickLeft.classList.add('active');
+          }
+        });
+      }
+
+      function onLeave() {
+        crosshair.classList.remove('active');
+        if (cursorTickTop)  cursorTickTop.classList.remove('active');
+        if (cursorTickLeft) cursorTickLeft.classList.remove('active');
+      }
+
+      renderTicks();
+      window.addEventListener('resize', renderTicks);
+      document.addEventListener('mousemove', onMove);
+      document.addEventListener('mouseleave', onLeave);
+    })();
+  </script>
+
+  <script>
+    /* --- Log tail: `tail -f /var/log/vishal.log` backdrop while konami/admin is active --- */
+    (function () {
+      const logEl = document.querySelector('.logtail');
+      if (!logEl) return;
+
+      const LINES = [
+        { src: 'core',               msg: 'handshake ok. companion_cube@facility.aperture' },
+        { src: 'core',               msg: 'personality core loaded: fact_core v2.4' },
+        { src: 'core',               msg: 'personality core loaded: space_core v1.1' },
+        { src: 'glados',             msg: 'warming up neurotoxin emitters... check complete.' },
+        { src: 'glados',             msg: 'cake inventory = 0. this was a triumph.', lv: 'warn' },
+        { src: 'glados',             msg: 'the enrichment center reminds you: do not look directly at the operational end of the device.' },
+        { src: 'test_chamber/19',    msg: 'subject #01498 cleared. advancing to chamber 20.' },
+        { src: 'test_chamber/20',    msg: 'portal surface detected: floor, ceiling. pairing...' },
+        { src: 'test_chamber/22',    msg: 'weighted companion cube recovered. euthanasia deferred.' },
+        { src: 'integration/netsuite',  msg: 'drift detected on vendor_map. reconciling 12 rows.' },
+        { src: 'integration/coupa',     msg: 'po_4521 synced. 0 conflicts.' },
+        { src: 'integration/workday',   msg: 'token refresh ok. next refresh in 3598s.' },
+        { src: 'integration/sap',       msg: 'rate limit: 2/60. backing off.', lv: 'warn' },
+        { src: 'integration/ironclad',  msg: 'contract_4412 parsed. 14 clauses extracted.' },
+        { src: 'integration/docusign',  msg: 'envelope 9a21 signed. status=complete.' },
+        { src: 'integration/jira',      msg: 'issue PROC-881 transitioned: review -> approved.' },
+        { src: 'schema_inference',   msg: 'columns detected: 17. nullable: 4. fks: 2.' },
+        { src: 'schema_inference',   msg: 'embedding vendor.name -> vector(1536) ok' },
+        { src: 'auth',               msg: 'admin session refreshed. user=vishal exp=1h' },
+        { src: 'auth',               msg: 'oauth token for netsuite nearing expiry.', lv: 'warn' },
+        { src: 'fk_resolver',        msg: 'vishal.current_job -> job.company matched (Ramp)' },
+        { src: 'fk_resolver',        msg: 'vishal.school -> school.where matched (UIUC)' },
+        { src: 'procurement',        msg: 'agent: recommended rebid on sku 88-12. savings $4,210/yr.' },
+        { src: 'procurement',        msg: 'invoice 77213 flagged: amount exceeds po by 0.4%' },
+        { src: 'aperture/doors',     msg: 'door 19-a opened. door 19-b opened.' },
+        { src: 'aperture/doors',     msg: 'door 22-a refused to open. manual override engaged.', lv: 'warn' },
+        { src: 'aperture/turrets',   msg: 'turret #7 offline. (i dont blame you.)' },
+        { src: 'core',               msg: 'heartbeat ok.' },
+        { src: 'core',               msg: 'memory: 68% used. gc complete in 4ms.' },
+        { src: 'cron/hourly',        msg: 'refresh materialized view vendor_spend.' },
+        { src: 'cron/nightly',       msg: 'snapshot pg_dump ok. 184MB.' },
+        { src: 'agents/ingest',      msg: 'batch 812 complete. 1403 rows upserted. 12 skipped.' },
+        { src: 'agents/reconcile',   msg: 'no drift detected on vendor_map.' },
+        { src: 'agents/validator',   msg: 'contract_4412 passed 43/43 checks.' },
+        { src: 'agents/writer',      msg: 'integration template generated: quickbooks (confidence 0.91).' },
+        { src: 'glados',             msg: 'please do not attempt to remove combustible lemons from the premises.' },
+        { src: 'glados',             msg: 'a single mute testing day has been added to your schedule.' }
+      ];
+
+      const MAX_LINES = 80;
+      let timer = null;
+
+      function pad2(n) { return n < 10 ? '0' + n : String(n); }
+      function pad3(n) { return n < 10 ? '00' + n : n < 100 ? '0' + n : String(n); }
+      function timestamp() {
+        const d = new Date();
+        return pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()) + ' ' +
+               pad2(d.getHours()) + ':' + pad2(d.getMinutes()) + ':' + pad2(d.getSeconds()) +
+               '.' + pad3(d.getMilliseconds());
+      }
+
+      function pushLine(entry) {
+        const row = document.createElement('div');
+
+        const ts = document.createElement('span');
+        ts.className = 'ts';
+        ts.textContent = '[' + timestamp() + '] ';
+
+        const src = document.createElement('span');
+        src.className = 'src';
+        src.textContent = entry.src + ': ';
+
+        const msg = document.createElement('span');
+        if (entry.lv) msg.className = 'lv-' + entry.lv;
+        msg.textContent = entry.msg;
+
+        row.appendChild(ts);
+        row.appendChild(src);
+        row.appendChild(msg);
+        logEl.appendChild(row);
+
+        while (logEl.children.length > MAX_LINES) {
+          logEl.removeChild(logEl.firstChild);
+        }
+      }
+
+      function addLine() {
+        pushLine(LINES[(Math.random() * LINES.length) | 0]);
+      }
+
+      // Queries run via the querybar get echoed into the tail so the stream reflects
+      // what the admin is actually doing. Decoupled via a custom DOM event so the
+      // querybar IIFE doesn't need a handle to this one.
+      document.addEventListener('logtail:push', (e) => {
+        if (!timer) return;
+        const d = e.detail || {};
+        if (!d.msg) return;
+        let msg = String(d.msg);
+        if (msg.length > 160) msg = msg.slice(0, 157) + '...';
+        pushLine({ src: d.src || 'log', msg: msg, lv: d.lv });
+      });
+
+      function scheduleNext() {
+        // Vary the cadence so it feels alive, not mechanical.
+        const delay = 420 + Math.random() * 380;
+        timer = setTimeout(() => { addLine(); scheduleNext(); }, delay);
+      }
+
+      // Delay the log kicking in so the declassified retypes on field values can
+      // finish first. Otherwise the first two seconds of admin mode are too busy.
+      const START_DELAY_MS = 1500;
+      let startTimer = null;
+
+      function start() {
+        if (timer) return;
+        if (!document.body.classList.contains('konami')) return;
+        scheduleNext();
+      }
+
+      function stop() {
+        if (startTimer) { clearTimeout(startTimer); startTimer = null; }
+        if (timer) { clearTimeout(timer); timer = null; }
+        logEl.innerHTML = '';
+      }
+
+      const obs = new MutationObserver(() => {
+        if (document.body.classList.contains('konami')) {
+          if (startTimer || timer) return;
+          startTimer = setTimeout(() => { startTimer = null; start(); }, START_DELAY_MS);
+        } else {
+          stop();
+        }
+      });
+      obs.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+
+      if (document.body.classList.contains('konami')) start();
+    })();
+
+    /* --- Declassified retypes: field values delete and retype to admin variants --- */
+    (function () {
+      const DEL_MS = 22;
+      const TYPE_MS = 38;
+      const STAGGER_MS = 110;
+
+      function collect() {
+        return Array.from(document.querySelectorAll('[data-admin]'));
+      }
+
+      function stash(el) {
+        if (el.dataset.original == null) el.dataset.original = el.textContent;
+        if (el.tagName === 'A' && el.dataset.adminHref && el.dataset.originalHref == null) {
+          el.dataset.originalHref = el.getAttribute('href') || '';
+        }
+      }
+
+      function applyHref(el, toAdmin) {
+        if (el.tagName !== 'A') return;
+        if (toAdmin && el.dataset.adminHref) {
+          el.setAttribute('href', el.dataset.adminHref);
+        } else if (!toAdmin && el.dataset.originalHref != null) {
+          el.setAttribute('href', el.dataset.originalHref);
+        }
+      }
+
+      function retype(el, to) {
+        const tick = (el._tick || 0) + 1;
+        el._tick = tick;
+        const isLive = () => el._tick === tick;
+        const from = el.textContent;
+
+        let i = from.length;
+        function del() {
+          if (!isLive()) return;
+          i--;
+          el.textContent = from.slice(0, i);
+          if (i > 0) setTimeout(del, DEL_MS);
+          else typeUp();
+        }
+        let j = 0;
+        function typeUp() {
+          if (!isLive()) return;
+          j++;
+          el.textContent = to.slice(0, j);
+          if (j < to.length) setTimeout(typeUp, TYPE_MS);
+        }
+        if (i > 0) del(); else typeUp();
+      }
+
+      const prefersReducedMotion = () =>
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function run(toAdmin) {
+        const targets = collect();
+        targets.forEach(stash);
+        const reduced = prefersReducedMotion();
+        targets.forEach((el, idx) => {
+          applyHref(el, toAdmin);
+          const next = toAdmin ? el.dataset.admin : el.dataset.original;
+          if (next == null || next === el.textContent) return;
+          if (reduced) { el.textContent = next; return; }
+          setTimeout(() => retype(el, next), idx * STAGGER_MS);
+        });
+      }
+
+      let wasKonami = document.body.classList.contains('konami');
+      const obs = new MutationObserver(() => {
+        const isKonami = document.body.classList.contains('konami');
+        if (isKonami === wasKonami) return;
+        wasKonami = isKonami;
+        run(isKonami);
+      });
+      obs.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    })();
+  </script>
 </body>
 </html>
